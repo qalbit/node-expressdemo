@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>headlinks}}
+<style>
+     .carousel-inner img {
+        width: 100%;
+        height: 100%;
+  }
+</style>
+</head>
+<body>
+ 
+  {{>navbar}}
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-12 col-12 mx-auto"> 
+                <div class="main_content">
+                    <form class="temp_form">
+                        <input type="text" name="" id="cityName" placeholder="Enter your City Name" autocomplete="off">
+                        <input type="submit" value="search" id="submitbtn">
+                    </form>
+                </div>
+
+                <div class="tempInfo">
+                    <div class="top_layer">
+                        <p id="day">Monday</p>
+                        <p id="today_data">26 DEC</p>
+                    </div>
+
+                    <div class="main_layer">
+                        <p id="city_name">Get Output Here</p>
+                        <div class="middle_layer">
+                            <p id="temp"></p>
+                            <p ><i id="temp_status"></i></p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{>footer}}
+
+    <script src="js/main.js"></script>
+    <script>
+        
+        const getCurrDay = () => {
+            let weekday = new Array(7);
+                weekday[0] = "Sun";
+                weekday[1] = "Mon";
+                weekday[2] = "Tue";
+                weekday[3] = "Wed";
+                weekday[4] = "Thur";
+                weekday[5] = "Fri";
+                weekday[6] = "Sat";
+
+            let currTime = new Date();
+            // console.log(currTime)
+            let days = weekday[currTime.getDay()];
+            let day = document.getElementById('day');
+           // console.log(day);
+            day.innerText = days;
+        };
+        getCurrDay();
+
+        let today_data = document.getElementById('today_data');
+        const getCurrTime = () => {
+            let months = [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec",
+            ];
+            let now = new Date();
+            let month = months[now.getMonth()];
+            //console.log(month)
+            let date = now.getDate();
+
+             today_data.innerText =` ${month} ${date}`;
+        };
+        getCurrTime();
+    </script>
+    
+</body>
+</html>
