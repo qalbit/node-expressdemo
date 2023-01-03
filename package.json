@@ -1,0 +1,15 @@
+{
+  "name": "weatherappnodejs",
+  "version": "1.0.0",
+  "description": "creating a weather app",
+  "main": "weather.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "\"Imdad\"",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "requests": "^0.3.0"
+  }
+}
